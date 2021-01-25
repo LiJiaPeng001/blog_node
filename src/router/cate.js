@@ -1,12 +1,10 @@
 const router = require('koa-router')()
-const controller = require('../controller/blog')
+const controller = require('../controller/cate')
 
-router.prefix('/api/koa-blog/blog')
+router.prefix('/api/koa-blog/cate')
 
 router.get('/', controller.list)
-router.get('/:id', controller.detail)
 router.post('/', controller.add)
 router.put('/:id', controller.update)
-router.delete('/:id', controller.remove)
 
 module.exports = router
