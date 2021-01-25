@@ -1,4 +1,6 @@
 const moment = require('dayjs')
+const Sequelize = require('sequelize')
+const Op = Sequelize.Op
 const { Blog, Cate } = require('../mysql/model')
 
 module.exports = {
@@ -37,7 +39,9 @@ module.exports = {
       offset: (page - 1) * per_page,
       limit: per_page,
       where: {
-        title,
+        title: {
+          [Op.like]: `%${title}%`,
+        },
       },
       include: [
         {
