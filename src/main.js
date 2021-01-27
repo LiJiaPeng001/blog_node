@@ -11,6 +11,7 @@ const { jwtSecret } = require('./utils/utils')
 // routes
 const blogs = require('./router/blog')
 const cates = require('./router/cate')
+const users = require('./router/user')
 
 const app = new Koa()
 
@@ -30,5 +31,6 @@ app.use(errorMessage)
 
 app.use(blogs.routes(), blogs.allowedMethods())
 app.use(cates.routes(), cates.allowedMethods())
+app.use(users.routes(), users.allowedMethods())
 
 app.listen(1202)

@@ -1,15 +1,15 @@
 /**
  * @description User数据模型
  */
-const { string } = require('../../utils/types')
+const { string, bigInt } = require('../../utils/types')
 const seq = require('../index')
 
 const User = seq.define('user', {
-  userName: {
-    type: string,
+  phone: {
+    type: bigInt,
     allowNull: false,
     unique: true,
-    comment: '用户名，唯一',
+    comment: '电话号，唯一',
   },
   password: {
     type: string,

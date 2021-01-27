@@ -8,7 +8,7 @@ const jwtSecret = '@#$LiXiaoPeng520=' // jwt密钥
 
 const SECRET_KET = 'lijiapeng_521' // 加密密钥
 
-const maxAge = 1 * 60 * 60 * 24 * 30
+const maxAge = 60 * 60 * 24 * 7
 
 module.exports = {
   errorMessage,

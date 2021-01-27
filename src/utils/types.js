@@ -7,5 +7,6 @@ module.exports = {
   string: sequelize.STRING,
   bigString: sequelize.STRING(12000),
   int: sequelize.INTEGER,
+  bigInt: sequelize.BIGINT,
   bool: sequelize.BOOLEAN,
 }
