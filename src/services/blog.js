@@ -2,6 +2,7 @@ const moment = require('dayjs')
 const Sequelize = require('sequelize')
 const Op = Sequelize.Op
 const { Blog, Cate } = require('../mysql/model')
+const marked = require('../utils/md')
 
 module.exports = {
   remove: async (id) => {
@@ -21,6 +22,7 @@ module.exports = {
     })
     data.createdAt = moment(data.createdAt).format('YYYY-MM-DD HH:mm:ss')
     data.updatedAt = moment(data.updatedAt).format('YYYY-MM-DD HH:mm:ss')
+    data.md = marked(data.content)
     return data
   },
   update: async ({ title, cateId, content, id }) => {
@@ -61,6 +63,7 @@ module.exports = {
     return {
       list: rows.map((item) => ({
         ...item.dataValues,
+        md: marked(item.dataValues.content),
         createdAt: moment(item.dataValues.createdAt.getTime()).format('YYYY-MM-DD HH:mm:ss'),
         updatedAt: moment(item.dataValues.updatedAt.getTime()).format('YYYY-MM-DD HH:mm:ss'),
       })),
