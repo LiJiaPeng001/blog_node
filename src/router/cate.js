@@ -1,7 +1,7 @@
 const router = require('koa-router')()
 const controller = require('../controller/cate')
 
-router.prefix('/koa-blog/cate')
+router.prefix('/api/koa-blog/cate')
 
 router.get('/', controller.list)
 router.post('/', controller.add)
