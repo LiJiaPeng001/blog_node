@@ -9,6 +9,7 @@ const conf = {
     min: 0,
     idle: 10000,
   },
+  timezone: '+08:00',
 }
 
 if (isProd) {
