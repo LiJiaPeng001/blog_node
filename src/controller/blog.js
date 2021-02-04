@@ -31,11 +31,12 @@ module.exports = {
     }
   },
   list: async (ctx) => {
-    let { page = 1, per_page = 12, title = '' } = ctx.query
+    let { page = 1, per_page = 12, title = '', cate_id = '' } = ctx.query
     let { list, total } = await blogApi.list({
       page: Number(page),
       per_page: Number(per_page),
       title,
+      cate_id,
     })
     ctx.body = {
       message: 'success',

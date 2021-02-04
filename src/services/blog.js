@@ -42,7 +42,7 @@ module.exports = {
       content,
     })
   },
-  list: async ({ page = 1, per_page = 12, title = '' }) => {
+  list: async ({ page = 1, per_page = 12, title = '', cate_id = '' }) => {
     let { count: total, rows } = await Blog.findAndCountAll({
       order: [['createdAt', 'DESC']],
       attributes: ['id', 'title', 'cateId', 'content', 'createdAt', 'updatedAt'],
@@ -57,6 +57,7 @@ module.exports = {
         {
           model: Cate,
           attributes: ['id', 'name'],
+          where: { id: cate_id },
         },
       ],
     })
