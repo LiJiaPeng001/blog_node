@@ -45,7 +45,7 @@ module.exports = {
   list: async ({ page = 1, per_page = 12, title = '', cate_id = '' }) => {
     let cateWhere = cate_id ? { id: cate_id } : {}
     let { count: total, rows } = await Blog.findAndCountAll({
-      order: [['createdAt', 'DESC']],
+      order: [['updateAt', 'DESC']],
       attributes: ['id', 'title', 'cateId', 'content', 'createdAt', 'updatedAt'],
       offset: (page - 1) * per_page,
       limit: per_page,

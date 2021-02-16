@@ -8,7 +8,7 @@ const mac = new qiniu.auth.digest.Mac(accessKey, secretKey)
 const options = {
   scope: bucket,
   expires: 60 * 60 * 24 * 30,
-  returnBody: '{ "key": "$(key)", "url": "http://img.mcljp.com/$(key)" }',
+  returnBody: '{ "key": "$(key)", "url": "http://img.ljpeng.fun/$(key)" }',
   callbackBodyType: 'application/json',
 }
 const putPolicy = new qiniu.rs.PutPolicy(options)
