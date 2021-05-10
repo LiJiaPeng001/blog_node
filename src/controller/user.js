@@ -30,7 +30,7 @@ module.exports = {
     reader.pipe(stream);
     // console.log(file, name);
     ctx.body = {
-      message: "wuhu",
+      message: "上传成功",
       data: {
         url: `https://ljpeng.fun/images/${name}`,
       },
