@@ -26,6 +26,7 @@ module.exports = {
     const stream = fs.createWriteStream(
       path.resolve(__dirname, uploadImageUrl, name)
     );
+    console.log(uploadImageUrl, "url");
     // 用管道将读出流 "倒给" 输入流
     reader.pipe(stream);
     // console.log(file, name);
