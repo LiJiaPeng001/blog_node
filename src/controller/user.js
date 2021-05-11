@@ -1,4 +1,5 @@
 const fs = require("fs");
+const fsExtra = require("fs-extra");
 const path = require("path");
 const userApi = require("../services/user");
 const uploadToken = require("../utils/qn");
@@ -19,6 +20,7 @@ module.exports = {
   upload: async (ctx) => {
     let { name } = ctx.request.body;
     let { file } = ctx.request.files;
+    fsExtra.ensureDirSync(path.dirname(uploadImageUrl));
     // 接收读出流
     const reader = fs.createReadStream(file.path);
     // 创建写入流
