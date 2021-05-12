@@ -25,9 +25,7 @@ module.exports = {
     // 创建写入流
     // 指定图片路径文件名（即上传图片存储目录）
     console.log(__dirname, "name");
-    const stream = fs.createWriteStream(
-      path.resolve(__dirname, uploadImageUrl, name)
-    );
+    const stream = fs.createWriteStream(uploadImageUrl + name);
     // 用管道将读出流 "倒给" 输入流
     reader.pipe(stream);
     ctx.body = {
