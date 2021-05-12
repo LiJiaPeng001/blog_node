@@ -11,7 +11,7 @@ const SECRET_KET = "lijiapeng_521"; // 加密密钥
 const maxAge = 60 * 60 * 24 * 7;
 
 const uploadImageUrl =
-  process.env.NODE_ENV === "development" ? "./" : "../../../static/images/";
+  process.env.NODE_ENV === "development" ? "/" : "../../../../static/images/";
 
 module.exports = {
   errorMessage,

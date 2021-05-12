@@ -20,18 +20,15 @@ module.exports = {
   upload: async (ctx) => {
     let { name } = ctx.request.body;
     let { file } = ctx.request.files;
-    fsExtra.ensureDirSync(path.dirname(uploadImageUrl));
     // 接收读出流
     const reader = fs.createReadStream(file.path);
     // 创建写入流
     // 指定图片路径文件名（即上传图片存储目录）
-    const stream = fs.createWriteStream(
-      path.resolve(__dirname, uploadImageUrl, name)
-    );
-    console.log(uploadImageUrl, "url");
+    console.log(__dirname, "url");
+    const filePath = __dirname + uploadImageUrl + name;
+    const stream = fs.createWriteStream(filePath);
     // 用管道将读出流 "倒给" 输入流
     reader.pipe(stream);
-    // console.log(file, name);
     ctx.body = {
       message: "上传成功",
       data: {
