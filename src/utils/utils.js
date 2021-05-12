@@ -12,8 +12,8 @@ const maxAge = 60 * 60 * 24 * 7;
 
 const uploadImageUrl =
   process.env.NODE_ENV === "development"
-    ? "./src/public/images/"
-    : "/var/www/static/images/";
+    ? "../public/images/"
+    : "/var/static/images/";
 
 module.exports = {
   errorMessage,
