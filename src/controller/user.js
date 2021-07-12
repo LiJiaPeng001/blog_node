@@ -32,7 +32,7 @@ module.exports = {
     ctx.body = {
       message: "上传成功",
       data: {
-        url: `https://ljpeng.fun/images/${name}`,
+        url: `https://ljpeng.fun/static/${name}`,
       },
     };
   },
