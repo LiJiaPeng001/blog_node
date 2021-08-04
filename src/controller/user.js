@@ -38,7 +38,7 @@ module.exports = {
   },
   uploadToken: async (ctx) => {
     ctx.body = {
-      mesage: "获取token成功",
+      message: "获取token成功",
       data: {
         token: uploadToken,
       },
