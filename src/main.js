@@ -17,6 +17,7 @@ const blogs = require("./router/blog");
 const cates = require("./router/cate");
 const users = require("./router/user");
 const cards = require("./router/card");
+const keeps = require("./router/keep");
 
 const app = new Koa();
 
@@ -50,9 +51,8 @@ app.use(blogs.routes(), blogs.allowedMethods());
 app.use(cates.routes(), cates.allowedMethods());
 app.use(users.routes(), users.allowedMethods());
 app.use(cards.routes(), cards.allowedMethods());
+app.use(keeps.routes(), keeps.allowedMethods());
 
 app.listen(1202, function () {
-  console.log(
-    chalk.hex("#009966").bgHex("#FFCC99").bold(`IP：http://localhost:1202`)
-  );
+  console.log(chalk.bold(`IP：http://localhost:1202`));
 });
